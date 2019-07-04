@@ -202,7 +202,7 @@ class VocabularyProcessor(object):
 
 # 这就是最普通的获取训练数据
 # '../input/bytedance/first-round/train.csv'
-def get_data(size=100000, path='./data/train.csv'):
+def get_data(size=100, path='./data/train.csv'):
     query_id = []
     query = []
     query_title_id = []
@@ -563,17 +563,17 @@ def get_word_dict():
 
 if __name__ == "__main__":
     # 设置基本参数
-    DATA_PATN = '/home/kesci/input/bytedance/first-round'
-    WORK_PATH = '/home/kesci/work'
-    TRAIN_MODEL_PATH = '/home/kesci/work/checkpoint_dir/'
+    DATA_PATN = './data'
+    WORK_PATH = './'
+    TRAIN_MODEL_PATH = './checkpoint_dir/'
     TRAIN_PATH = os.path.join(DATA_PATN, 'train.csv')
     TFRECORDS_PATH = os.path.join(WORK_PATH, 'tfrecords')
-    word_dict_name = '/home/kesci/work/model/word-dict-16-5.pkl'
+    word_dict_name = './model/word-dict-16-5.pkl'
     sentence_length = 16
     # 得到词典
     print('得到词典')
     # get_word_dict()
-    print('词典构造完成')
+    # print('词典构造完成')
     # 设置进行训练的参数
     test_size = 0.05
     num_classes = 2
@@ -588,7 +588,7 @@ if __name__ == "__main__":
     print('构建模型')
     main()
     print('模型训练完成')
-    print('根据模型，得到答案')
-    print(len(VocabularyProcessor.restore(word_dict_name).vocabulary_))
-    get_answer()
-    print('答案已保存，祝自己好运')
+    # print('根据模型，得到答案')
+    # print(len(VocabularyProcessor.restore(word_dict_name).vocabulary_))
+    # get_answer()
+    # print('答案已保存，祝自己好运')
